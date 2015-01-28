@@ -39,7 +39,7 @@ module Guard
       cmd = []
       cmd << "bundle exec" if @enable_bundler
       cmd << "unicorn_rails"
-      cmd << "-c #{@config_file}"
+      cmd << "-c #{@config_file}" if @config_file
       cmd << "-p #{@port}" if @port
       cmd << "-l #{@socket}" if @socket
       cmd << "-E #{@environment}"
